@@ -1,0 +1,63 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"', 100) %}
+        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 99) %}
+        {% do assets.addCss('theme://css/custom.css', 98) %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery', 100) %}
+        {% do assets.addJs('theme://js/site.js', 99) %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head%}
+</head>
+
+<body>
+{% block header %}
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <a href="{{ home_url }}" class="site-logo left">Mastel.org</a>
+            </div>
+            {% include 'partials/navigation.html.twig' %}
+        </nav>
+    </header>
+{% endblock %}
+
+{% block body %}
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <p class="copyright">Copyright Jacob Mastel {{ "now"|date("Y") }}</p>
+    </footer>
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
+
+</body>
+</html>

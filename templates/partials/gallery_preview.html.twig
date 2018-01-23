@@ -1,0 +1,18 @@
+{% set imgs      = page.media.images|slice(0,6) %}
+{% set theme_str = '{"gallery_theme":"' ~ page.header.unitegallery.gallery_theme ~ '"}' %}
+{% set gprev_id  = 'unitegallery-' ~ page.title %}
+
+{% set img_cnt = page.media.images|length %}
+
+{% if img_cnt > 1 %}
+	{% set plural = " images" %}
+{% else %}
+	{% set plural = " image" %}
+{% endif %}
+
+
+<h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+
+<div class="gallery-container {{ page.header.class }}">
+	{{ unite_gallery(imgs, theme_str, gprev_id) }}
+</div>

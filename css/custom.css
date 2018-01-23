@@ -1,0 +1,394 @@
+html {
+    /* Makes the scrollbar always visible */
+    /*overflow-y: scroll;*/
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #393a4e; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b2b6cc;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    /* previous syntax */
+/*    display: -webkit-box;
+    display:    -moz-box;
+    display:         box;
+
+    -webkit-box-orient: vertical;
+       -moz-box-orient: vertical;
+        -ms-box-orient: vertical;
+            box-orient: vertical;
+*/
+    /* current syntax */
+    display: -webkit-flex;
+    display:    -moz-flex;
+    display:     -ms-flex;
+    display:         flex;
+
+    -webkit-flex-direction: column;
+       -moz-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+::selection {
+  background: #f7a590; /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: #ffb7b7; /* Gecko Browsers */
+}
+
+header {
+    background-color: #393a4e;
+}
+
+nav {
+    color: white;
+    height: 100%;
+    text-align: center;
+}
+
+.showcase {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    margin: 10px;
+}
+
+.showcase-img {
+    flex: 2;
+}
+
+.showcase-img > img {
+    max-width: 100%;
+    display: block;
+}
+
+.showcase-text {
+    flex: 8;
+    margin-left: 15px;
+}
+
+.showcase-title {
+    margin-bottom: 5px;
+}
+
+.showcase-content > p {
+    margin-top: 5px;
+}
+
+@media(max-width: 600px) {
+    .container {
+        width: 95%;
+        margin: 0px auto;
+    }
+
+    .blog-listing {
+        /*margin-left: 10px;*/
+        /*margin-right: 20px;*/
+    }
+
+    .listing-date {
+        flex: 2 0 0;
+        text-align: center;
+    }
+
+    .listing-body {
+        flex: 8 0 0;
+    }
+
+    .sm-only {
+        display: visible;
+    }
+
+    .lg-only {
+        display: none;
+    }
+
+    .hide-on-sm {
+        display: none;
+    }
+
+    .show-md-down {
+        display: visible;
+    }
+}
+
+@media(min-width: 600px) and (max-width: 1199px) {
+    .container {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .sm-only {
+        display: none;
+    }
+
+    .lg-only {
+        display: none;
+    }
+
+    .show-md-down {
+        display: visible;
+    }
+}
+
+@media(min-width: 1200px) {
+    .container {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .sm-only {
+        display: none;
+    }
+
+    .lg-only {
+        display: visible;
+    }
+
+    .show-md-down {
+        display: none;
+    }
+}
+
+.site-logo {
+    display: block;
+    font-size: 2em;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-decoration: none;
+}
+
+.color-band {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.color-band-item {
+    height: 2px;
+    flex: 1 0 0;
+}
+
+.c1 { background-color: #393a4e; }
+.c2 { background-color: #b2b6cc; }
+.c3 { background-color: #f7a590; }
+.c4 { background-color: #b72f2b; }
+.c5 { background-color: #6a2025; }
+
+header > ul
+, nav > ul {
+    vertical-align:top;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-inline > li {
+    display: inline-block;
+    float: left;
+    margin: 0;
+}
+
+header > ul > li
+, nav > ul > li > a {
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.sidenav {
+    background-color: #393a4e;
+    padding-top: 60px;
+
+    height: 100%;
+    width: 0px;
+
+    overflow: hidden;
+
+    /*font-size: 1.25vw;*/
+   
+    /* Place the drawer on the far left */
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    /* Put above the other things */
+    z-index: 1;
+    
+    /* The transition is activated 
+       when the width is changed   */
+    transition: all 0.5s;
+}
+
+.selected {
+    background-color: #b2b6cc;
+}
+
+main {
+    flex: 1;
+    text-align: left;
+}
+
+blockquote {
+    border-left: 10px solid #b2b6cc;
+    background-color: whitesmoke;
+    margin: 5px auto;
+    padding: 5px;
+    width: 90%;
+}
+
+a {
+    color: #b72f2b;
+}
+
+footer {
+    color: white;
+    background-color: #393a4e;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.blog-listing {
+    margin-top: 10px;
+    display: flex;
+    direction: column;
+}
+
+.blog-post {
+    /*margin-left : 20px;*/
+    /*margin-right: 20px;*/
+}
+
+.blog-post-details {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.listing-date {
+    flex: 1 0 0;
+    text-align: center;
+}
+
+.listing-body {
+    flex: 9 0 0;
+}
+
+.social-bar {
+    display: inline;
+    list-style: none;
+    margin: 5px;
+}
+
+.social-bar > li {
+    display: inline;
+}
+
+.color-facebook { color: #365899; }
+.color-twitter  { color: #00aced; }
+.color-reddit   { color: #ed001c; }
+
+.listing-title {
+    margin-bottom: 5px;
+}
+
+.listing-body > p {
+    margin-top: 5px;
+}
+
+.listing-month {
+    font-size: 2vh;
+}
+
+.listing-day {
+    font-size: 2.5vh;
+}
+
+.listing-year {
+    font-size: 2vh;
+}
+
+.valign {
+    display: flex;
+    align-items: center;
+}
+
+.valign-item {
+    width: 100%;
+}
+
+.valign-item--top    { align-self: flex-start; }
+.valign-item--bottom { align-self: flex-end;   }
+
+/* Forms */
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #bbb;
+    box-sizing: border-box;
+
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus, textarea:focus, select:focus {
+    border: 1px solid #b2b6cc;
+    box-shadow: 0 0 10px #b2b6cc;
+    outline: none;
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+
+    background-color: #393a4e;
+    transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+    background-color: #b2b6cc;
+}
+
+button[type="reset"] {
+    background-color: #b72f2b;
+}
+
+button[type="reset"]:hover {
+    background-color: #f7a590;
+}

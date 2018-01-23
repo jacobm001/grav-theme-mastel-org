@@ -1,0 +1,12 @@
+<div class="blog-listing valign">
+	<div class="listing-date valign-item">
+		<div class="listing-month">{{ page.date|date("M") }}</div>
+		<div class="listing-day">{{ page.date|date("d") }}</div>
+		<div class="listing-year">{{ page.date|date("Y") }}</div>
+	</div>
+
+	<div class="listing-body">
+		<h2 class="listing-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
+		{{ page.summary }}
+	</div>
+</div>

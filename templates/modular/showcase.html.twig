@@ -1,0 +1,15 @@
+{% set img = page.media.images|first %}
+
+<div class="showcase valign">
+	<div class="showcase-img valign-item">
+		<img src="{{ img.url }}" />
+	</div>
+
+	<div class="showcase-text valign-item">
+		<h2 class="showcase-title">{{ page.title }}</h2>
+
+		<div class="showcase-content">
+			{{ content }}
+		</div>
+	</div>
+</div>
