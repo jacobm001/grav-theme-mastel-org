@@ -22,40 +22,12 @@
     {% endfor %}
 {% endmacro %}
 
-<ul class="right lg-only nav-inline">
-    {# {% if theme_config.dropdown.enabled %} #}
-        {# {{ _self.loop(pages) }} #}
-    {# {% else %} #}
-        {% for page in pages.children.visible %}
-            {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-            <li class="{{ current_page }}">
-                <a href="{{ page.url }}">
-                    {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
-                    {{ page.menu }}
-                </a>
-            </li>
-        {% endfor %}
-    {# {% endif %} #}
-    {% for mitem in site.menu %}
-        <li>
-            <a href="{{ mitem.url }}">
-                {% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}"></i>{% endif %}
-                {{ mitem.text }}
-            </a>
-        </li>
-    {% endfor %}
-</ul>
-
-<ul class="right show-md-down">
-    <li><a onclick="opendrawer()"><i class="fa fa-bars"></i></a></li>
-</ul>
-
-<ul class="sidenav" style="display: block">
+<ul class="sidenav">
     {% for page in pages.children.visible %}
         {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
         <li class="{{ current_page }}">
             <a href="{{ page.url }}">
-                {% if page.header.icon %}<i class="fa fa-2x fa-{{ page.header.icon }}"></i>{% endif %}
+                {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"> </i>{% endif %}
                 {{ page.menu }}
             </a>
         </li>

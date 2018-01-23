@@ -23,26 +23,16 @@ html, body {
 
 body {
     margin: 0 auto;
-    /* previous syntax */
-/*    display: -webkit-box;
-    display:    -moz-box;
-    display:         box;
 
-    -webkit-box-orient: vertical;
-       -moz-box-orient: vertical;
-        -ms-box-orient: vertical;
-            box-orient: vertical;
-*/
-    /* current syntax */
     display: -webkit-flex;
     display:    -moz-flex;
     display:     -ms-flex;
     display:         flex;
 
-    -webkit-flex-direction: column;
-       -moz-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-flex-direction: row;
+       -moz-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 
 ::selection {
@@ -60,7 +50,14 @@ header {
 nav {
     color: white;
     height: 100%;
-    text-align: center;
+    text-align: left;
+    background-color: #393a4e;
+    padding-top: 60px;
+    display: block;
+    overflow: hidden;
+    transition: all 0.5s;
+
+    width: 250px;
 }
 
 .showcase {
@@ -194,8 +191,7 @@ nav {
 .c4 { background-color: #b72f2b; }
 .c5 { background-color: #6a2025; }
 
-header > ul
-, nav > ul {
+nav > ul {
     vertical-align:top;
     list-style-type: none;
     margin: 0;
@@ -208,38 +204,13 @@ header > ul
     margin: 0;
 }
 
-header > ul > li
-, nav > ul > li > a {
+nav > ul > li > a {
     display: inline-block;
     color: white;
     padding: 8px;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 25px;
     text-decoration: none;
-}
-
-.sidenav {
-    background-color: #393a4e;
-    padding-top: 60px;
-
-    height: 100%;
-    width: 0px;
-
-    overflow: hidden;
-
-    /*font-size: 1.25vw;*/
-   
-    /* Place the drawer on the far left */
-    position: fixed;
-    top: 0;
-    left: 0;
-    
-    /* Put above the other things */
-    z-index: 1;
-    
-    /* The transition is activated 
-       when the width is changed   */
-    transition: all 0.5s;
 }
 
 .selected {
