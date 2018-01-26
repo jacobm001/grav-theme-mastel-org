@@ -75,6 +75,9 @@ nav {
     background-color: #393a4e;
     display: block;
     transition: all 0.5s;
+    
+    overflow: hidden;
+    z-index: 1;
 }
 
 .sidenav {
@@ -218,9 +221,11 @@ nav > ul > li > a {
     text-decoration: none;
 }
 
-.selected
-, .selected > a {
+.selected {
     background-color: #b2b6cc;
+}
+
+.selected > a {
     color: #393a4e;
 }
 
