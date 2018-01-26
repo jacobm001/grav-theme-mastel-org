@@ -16,15 +16,18 @@ html {
     background-color: #b2b6cc;
 }
 
-html, body {
-    height: 100%;
+html { 
     font-family: 'Roboto', sans-serif;
+    height: 100%; 
 }
 
 body {
     margin: 0 auto;
+    min-height: 100%;
 
-    display: -webkit-flex;
+    display: flex;
+
+/*    display: -webkit-flex;
     display:    -moz-flex;
     display:     -ms-flex;
     display:         flex;
@@ -32,7 +35,25 @@ body {
     -webkit-flex-direction: row;
        -moz-flex-direction: row;
         -ms-flex-direction: row;
-            flex-direction: row;
+            flex-direction: row;*/
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.flex-col.flex-fill {
+    width: 100%;
 }
 
 ::selection {
@@ -43,8 +64,8 @@ body {
   background: #ffb7b7; /* Gecko Browsers */
 }
 
-header {
-    background-color: #393a4e;
+main {
+    text-align: left;
 }
 
 nav {
@@ -52,52 +73,28 @@ nav {
     height: 100%;
     text-align: left;
     background-color: #393a4e;
-    padding-top: 60px;
     display: block;
-    overflow: hidden;
     transition: all 0.5s;
-
-    width: 250px;
 }
 
-.showcase {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    margin: 10px;
-}
-
-.showcase-img {
-    flex: 2;
-}
-
-.showcase-img > img {
-    max-width: 100%;
-    display: block;
-}
-
-.showcase-text {
-    flex: 8;
-    margin-left: 15px;
-}
-
-.showcase-title {
-    margin-bottom: 5px;
-}
-
-.showcase-content > p {
-    margin-top: 5px;
+.sidenav {
+    padding-top: 60px;
 }
 
 @media(max-width: 600px) {
     .container {
         width: 95%;
         margin: 0px auto;
+        /*height: 100%;*/
     }
 
     .blog-listing {
         /*margin-left: 10px;*/
         /*margin-right: 20px;*/
+    }
+
+    nav {
+        width: 0px;
     }
 
     .listing-date {
@@ -128,7 +125,7 @@ nav {
 
 @media(min-width: 600px) and (max-width: 1199px) {
     .container {
-        width: 70%;
+        width: 80%;
         margin: 0 auto;
     }
 
@@ -142,6 +139,10 @@ nav {
 
     .show-md-down {
         display: visible;
+    }
+
+    nav {
+        width: 250px;
     }
 }
 
@@ -161,6 +162,10 @@ nav {
 
     .show-md-down {
         display: none;
+    }
+
+    nav {
+        width: 350px;
     }
 }
 
@@ -213,13 +218,10 @@ nav > ul > li > a {
     text-decoration: none;
 }
 
-.selected {
+.selected
+, .selected > a {
     background-color: #b2b6cc;
-}
-
-main {
-    flex: 1;
-    text-align: left;
+    color: #393a4e;
 }
 
 blockquote {
@@ -251,65 +253,6 @@ footer {
     float: right;
 }
 
-.blog-listing {
-    margin-top: 10px;
-    display: flex;
-    direction: column;
-}
-
-.blog-post {
-    /*margin-left : 20px;*/
-    /*margin-right: 20px;*/
-}
-
-.blog-post-details {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.listing-date {
-    flex: 1 0 0;
-    text-align: center;
-}
-
-.listing-body {
-    flex: 9 0 0;
-}
-
-.social-bar {
-    display: inline;
-    list-style: none;
-    margin: 5px;
-}
-
-.social-bar > li {
-    display: inline;
-}
-
-.color-facebook { color: #365899; }
-.color-twitter  { color: #00aced; }
-.color-reddit   { color: #ed001c; }
-
-.listing-title {
-    margin-bottom: 5px;
-}
-
-.listing-body > p {
-    margin-top: 5px;
-}
-
-.listing-month {
-    font-size: 2vh;
-}
-
-.listing-day {
-    font-size: 2.5vh;
-}
-
-.listing-year {
-    font-size: 2vh;
-}
-
 .valign {
     display: flex;
     align-items: center;
@@ -321,45 +264,3 @@ footer {
 
 .valign-item--top    { align-self: flex-start; }
 .valign-item--bottom { align-self: flex-end;   }
-
-/* Forms */
-
-input, textarea, select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: 1px solid #bbb;
-    box-sizing: border-box;
-
-    transition: all 0.2s ease-in-out;
-}
-
-input:focus, textarea:focus, select:focus {
-    border: 1px solid #b2b6cc;
-    box-shadow: 0 0 10px #b2b6cc;
-    outline: none;
-}
-
-button {
-    border: none;
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-
-    background-color: #393a4e;
-    transition: all 0.5s ease-in-out;
-}
-
-button:hover {
-    background-color: #b2b6cc;
-}
-
-button[type="reset"] {
-    background-color: #b72f2b;
-}
-
-button[type="reset"]:hover {
-    background-color: #f7a590;
-}

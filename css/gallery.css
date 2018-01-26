@@ -1,0 +1,28 @@
+.showcase {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    margin: 10px;
+}
+
+.showcase-img {
+    flex: 2;
+}
+
+.showcase-img > img {
+    max-width: 100%;
+    display: block;
+}
+
+.showcase-text {
+    flex: 8;
+    margin-left: 15px;
+}
+
+.showcase-title {
+    margin-bottom: 5px;
+}
+
+.showcase-content > p {
+    margin-top: 5px;
+}
