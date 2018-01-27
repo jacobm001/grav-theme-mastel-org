@@ -38,6 +38,10 @@
 {% block body %}
         <div class="flex-col">
             <nav>
+                <div class="avatar hide-on-sm">
+                    {{ page.find('/images').media['avatar.svg'] }}
+                </div>
+
                 {% include 'partials/navigation.html.twig' %}
             </nav>
         </div>

@@ -80,8 +80,16 @@ nav {
     z-index: 1;
 }
 
+.avatar {
+    text-align: center
+}
+
+.avatar > img {
+    margin-top: 50px;
+}
+
 .sidenav {
-    padding-top: 60px;
+    padding-top: 30px;
 }
 
 @media(max-width: 600px) {
@@ -147,6 +155,10 @@ nav {
     nav {
         width: 250px;
     }
+
+    .avatar > img {
+        width: 75%;
+    }
 }
 
 @media(min-width: 1200px) {
@@ -169,6 +181,10 @@ nav {
 
     nav {
         width: 350px;
+    }
+
+    .avatar > img {
+        width: 65%;
     }
 }
 
