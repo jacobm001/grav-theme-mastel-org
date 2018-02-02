@@ -36,24 +36,30 @@
 <body>
 
 {% block body %}
-        <div class="flex-col">
-            <nav>
-                <div class="avatar hide-on-sm">
-                    {{ page.find('/images').media['avatar.svg'] }}
-                </div>
+    <div class="flex-col">
+        <nav>
+            <div class="avatar hide-on-sm">
+                {{ page.find('/images').media['avatar.svg'] }}
+            </div>
 
-                {% include 'partials/navigation.html.twig' %}
-            </nav>
+            {% include 'partials/navigation.html.twig' %}
+        </nav>
+    </div>
+
+    <div class="flex-col flex-fill">
+        <div class="topnav sm-only">
+            <a onclick="opendrawer()">
+                <i class="right drawer-button fa fa-bars"></i>
+            </a>
         </div>
 
-        <div class="flex-col flex-fill">
-            <main>
-                <div class="container">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-            </main>
-        </div>   
+        <main>
+            <div class="container">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+    </div>   
 {% endblock %}
 
 {#{% block footer %}

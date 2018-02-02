@@ -80,6 +80,16 @@ nav {
     z-index: 1;
 }
 
+.topnav {
+    background-color: #393a4e;
+    color: white;
+}
+
+.drawer-button {
+    padding: 10px;
+    color: white;
+}
+
 .avatar {
     text-align: center
 }

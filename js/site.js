@@ -1,5 +1,5 @@
 var opendrawer = function() {
-    var drawer = $('.sidenav');
+    var drawer = $('nav');
 
     if ( drawer.width() > 0  )
         drawer.width(0);
