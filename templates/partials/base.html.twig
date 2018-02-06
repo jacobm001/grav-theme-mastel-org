@@ -16,7 +16,7 @@
 
     {% block stylesheets %}
         {% do assets.addCss('https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"', 100) %}
-        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
+        {% do assets.addCss('theme://css/fontawesome-all.css', 99) %}
         {% do assets.addCss('theme://css/custom.css', 98) %}
         {% do assets.addCss('theme://css/blog.css', 97) %}
         {% do assets.addCss('theme://css/forms.css', 96) %}
@@ -61,12 +61,6 @@
         </main>
     </div>   
 {% endblock %}
-
-{#{% block footer %}
-    <footer>
-        <p class="copyright">Copyright Jacob Mastel {{ "now"|date("Y") }}</p>
-    </footer>
-{% endblock %} #}
 
 {% block bottom %}
     {{ assets.js('bottom') }}
