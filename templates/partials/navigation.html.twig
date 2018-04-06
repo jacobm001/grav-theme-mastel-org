@@ -32,4 +32,13 @@
             </a>
         </li>
     {% endfor %}
+
+    <li class="{{ current_page }}">
+        {% if grav.user.authenticated %}
+            <a class="logout" href="{{ uri.addNonce((base_url_relative ~ uri.path)|trim('/') ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce')|e }}">
+                <i class="fa fa-lock"> </i>
+                {{ 'PLUGIN_LOGIN.BTN_LOGOUT'|t }}
+            </a>
+        {% endif %}
+    </li>
 </ul>
