@@ -3,7 +3,7 @@
     	<i class="fa fa-sign-out-alt"> </i> {{ 'PLUGIN_LOGIN.BTN_LOGOUT'|t }}
 	</a>
 {% else %}
-    <a class="login" href="{{ base_url_relative|trim('/') ~ config.plugin.login.route }}">
+    <a class="login" href="{{ config.plugins.login.route }}">
     	<i class="fa fa-sign-in-alt"> </i> {{ 'PLUGIN_LOGIN.BTN_LOGIN'|t }}
 	</a>
 {% endif %}
