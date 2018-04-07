@@ -295,3 +295,9 @@ footer {
 
 .valign-item--top    { align-self: flex-start; }
 .valign-item--bottom { align-self: flex-end;   }
+
+.recipebook-corner-button {
+    position:fixed;
+    right: 25px;
+    bottom: 25px;
+}
