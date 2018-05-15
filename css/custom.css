@@ -1,10 +1,10 @@
-html {
-    /* Makes the scrollbar always visible */
-    /*overflow-y: scroll;*/
+html, body {
+    padding: 0;
+    margin: 0;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 10px;
     height: 5px;
 }
 
@@ -18,44 +18,29 @@ html {
 
 html { 
     font-family: 'Roboto', sans-serif;
+
     height: 100%; 
 }
 
 body {
-    margin: 0 auto;
-
     display: flex;
     flex-direction: row;
     min-height: 100%;
     align-items: stretch;
-
-/*    display: -webkit-flex;
-    display:    -moz-flex;
-    display:     -ms-flex;
-    display:         flex;
-
-    -webkit-flex-direction: row;
-       -moz-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;*/
-
-    /*flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;*/
-    width: 100%;
 }
 
-.sidebar {
-    order: -1;
-    flex: 0 0 300px;
+pre {
+    white-space: pre;
+    word-wrap: normal;
+    overflow-x: auto;
+    /*margin: 0 auto;*/
+    width: 85%;
+    min-width: 0;
 }
 
-.flex-col {
+.flexitem {
     display: flex;
-}
-
-.flex-col.flex-fill {
-    width: 100%;
+    min-width: 0;
 }
 
 ::selection {
@@ -64,10 +49,6 @@ body {
 
 ::-moz-selection {
   background: #ffb7b7; /* Gecko Browsers */
-}
-
-main {
-    text-align: left;
 }
 
 nav {
@@ -81,7 +62,7 @@ nav {
     position:fixed;
 
     overflow: hidden;
-    z-index: 1;
+    /*z-index: 1;*/
 }
 
 .topnav {
@@ -108,8 +89,8 @@ nav {
 
 @media(max-width: 600px) {
     .container {
-        width: 95%;
-        margin: 0px auto;
+        /*width: 95%;*/
+        /*margin: 0px auto;*/
         /*height: 100%;*/
     }
 
@@ -118,6 +99,11 @@ nav {
         /*margin-right: 20px;*/
     }
 
+    .sidebar {
+        order: -1;
+        flex: 0 0 0px;
+    }
+    
     nav {
         width: 0px;
     }
@@ -150,8 +136,9 @@ nav {
 
 @media(min-width: 600px) and (max-width: 1199px) {
     .container {
-        width: 80%;
-        margin: 0 auto;
+        /*width: 80%;*/
+        /*margin: 0 auto;*/
+        min-width: 0;
     }
 
     .sm-only {
@@ -164,6 +151,11 @@ nav {
 
     .show-md-down {
         display: visible;
+    }
+
+    .sidebar {
+        order: -1;
+        flex: 0 0 250px;
     }
 
     nav {
@@ -177,8 +169,8 @@ nav {
 
 @media(min-width: 1200px) {
     .container {
-        width: 50%;
-        margin: 0 auto;
+        /*width: 70%;*/
+        /*margin: 0 auto;*/
     }
 
     .sm-only {
@@ -191,6 +183,11 @@ nav {
 
     .show-md-down {
         display: none;
+    }
+
+    .sidebar {
+        order: -1;
+        flex: 0 0 350px;
     }
 
     nav {
