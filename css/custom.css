@@ -16,33 +16,6 @@ html, body {
     background-color: #b2b6cc;
 }
 
-html { 
-    font-family: 'Roboto', sans-serif;
-
-    height: 100%; 
-}
-
-body {
-    display: flex;
-    flex-direction: row;
-    min-height: 100%;
-    align-items: stretch;
-}
-
-pre {
-    white-space: pre;
-    word-wrap: normal;
-    overflow-x: auto;
-    /*margin: 0 auto;*/
-    width: 85%;
-    min-width: 0;
-}
-
-.flexitem {
-    display: flex;
-    min-width: 0;
-}
-
 ::selection {
   background: #f7a590; /* WebKit/Blink Browsers */
 }
@@ -51,21 +24,55 @@ pre {
   background: #ffb7b7; /* Gecko Browsers */
 }
 
+
+html { 
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+main {
+    flex: 1;
+    height: 100vh;
+    overflow: auto;
+}
+
+.main-content {
+    margin: 0 auto;
+    padding: 25px;
+    max-width: 760px;
+}
+
+nav {
+    flex: 0 0 12em;
+    order: -1;
+    min-height: 100%;
+}
+
+pre {
+    overflow: auto;
+    margin: 0 auto;
+}
+
 nav {
     color: white;
-    height: 100%;
+    height: 100vh;
     text-align: left;
     background-color: #393a4e;
     display: block;
     transition: all 0.5s;
-    
-    position:fixed;
-
-    overflow: hidden;
-    /*z-index: 1;*/
 }
 
-.topnav {
+/*.topnav {
     background-color: #393a4e;
     color: white;
 }
@@ -73,7 +80,7 @@ nav {
 .drawer-button {
     padding: 10px;
     color: white;
-}
+}*/
 
 .avatar {
     text-align: center
@@ -88,26 +95,6 @@ nav {
 }
 
 @media(max-width: 600px) {
-    .container {
-        /*width: 95%;*/
-        /*margin: 0px auto;*/
-        /*height: 100%;*/
-    }
-
-    .blog-listing {
-        /*margin-left: 10px;*/
-        /*margin-right: 20px;*/
-    }
-
-    .sidebar {
-        order: -1;
-        flex: 0 0 0px;
-    }
-    
-    nav {
-        width: 0px;
-    }
-
     .listing-date {
         flex: 2 0 0;
         text-align: center;
@@ -135,12 +122,6 @@ nav {
 }
 
 @media(min-width: 600px) and (max-width: 1199px) {
-    .container {
-        /*width: 80%;*/
-        /*margin: 0 auto;*/
-        min-width: 0;
-    }
-
     .sm-only {
         display: none;
     }
@@ -158,21 +139,12 @@ nav {
         flex: 0 0 250px;
     }
 
-    nav {
-        width: 250px;
-    }
-
     .avatar > img {
         width: 75%;
     }
 }
 
 @media(min-width: 1200px) {
-    .container {
-        /*width: 70%;*/
-        /*margin: 0 auto;*/
-    }
-
     .sm-only {
         display: none;
     }
@@ -183,15 +155,6 @@ nav {
 
     .show-md-down {
         display: none;
-    }
-
-    .sidebar {
-        order: -1;
-        flex: 0 0 350px;
-    }
-
-    nav {
-        width: 350px;
     }
 
     .avatar > img {
