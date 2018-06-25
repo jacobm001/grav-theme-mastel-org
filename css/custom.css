@@ -30,14 +30,13 @@ html {
 }
 
 body {
-    display: flex;
+    /* display: flex; */
     min-height: 100vh;
     flex-direction: column;
 }
 
 .content {
     display: flex;
-    flex: 1;
 }
 
 main {
@@ -63,10 +62,6 @@ pre {
     margin: 0 auto;
 }
 
-header {
-    flex: none;
-}
-
 nav {
     color: white;
     height: 100vh;
@@ -75,16 +70,6 @@ nav {
     display: block;
     transition: all 0.5s;
 }
-
-/*.topnav {
-    background-color: #393a4e;
-    color: white;
-}
-
-.drawer-button {
-    padding: 10px;
-    color: white;
-}*/
 
 .avatar {
     text-align: center
@@ -99,6 +84,29 @@ nav {
 }
 
 @media(max-width: 600px) {
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
+    header {
+        flex: 0;
+    }
+
+    nav {
+        flex: 0 0 0;
+        order: -1;
+        min-height: 100%;
+    }
+
+    main {
+        flex: 1;
+    }
+
+    content {
+        flex-direction: column;
+    }
+
     .listing-date {
         flex: 2 0 0;
         text-align: center;
