@@ -1,9 +1,9 @@
 {% if grav.user.authenticated %}
     <a class="logout" href="{{ uri.addNonce((base_url_relative ~ uri.path)|trim('/') ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce')|e }}">
-    	<i class="fa fa-sign-out-alt"> </i> {{ 'PLUGIN_LOGIN.BTN_LOGOUT'|t }}
+    	<i class="fa fa-sign-out-alt"> </i> <span class="hide-on-sm">{{ 'PLUGIN_LOGIN.BTN_LOGOUT'|t }}</span>
 	</a>
 {% else %}
     <a class="login" href="{{ config.plugins.login.route }}">
-    	<i class="fa fa-sign-in-alt"> </i> {{ 'PLUGIN_LOGIN.BTN_LOGIN'|t }}
+    	<i class="fa fa-sign-in-alt"> </i> <span class="hide-on-sm">{{ 'PLUGIN_LOGIN.BTN_LOGIN'|t }}</span>
 	</a>
 {% endif %}
