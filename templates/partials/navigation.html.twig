@@ -22,11 +22,7 @@
     {% endfor %}
 {% endmacro %}
 
-<header class="sm-only">
-    <p>hello, world</p>
-</header>
-
-<nav class="hide-on-sm">
+<nav>
     <div class="avatar hide-on-sm">
         {{ page.find('/images').media['avatar.svg'] }}
     </div>
@@ -36,8 +32,12 @@
             {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
             <li class="{{ current_page }}">
                 <a href="{{ page.url }}">
-                    {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"> </i>{% endif %}
-                    {{ page.menu }}
+                    <span>
+                        {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"> </i>{% endif %}
+                    </span>
+                    <span class="hide-on-sm">
+                        {{ page.menu }}
+                    </span>
                 </a>
             </li>
         {% endfor %}
