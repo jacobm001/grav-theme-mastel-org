@@ -36,18 +36,8 @@
 <body>
 
 {% block body %}
-    <header class="sm-only">
-        <p>hello, world</p>
-    </header>
-    
     <div class="content">
-        <nav class="hide-on-sm">
-            <div class="avatar hide-on-sm">
-                {{ page.find('/images').media['avatar.svg'] }}
-            </div>
-
-            {% include 'partials/navigation.html.twig' %}
-        </nav>
+        {% include 'partials/navigation.html.twig' %}
 
         <main>
             <div class="main-content">

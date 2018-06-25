@@ -22,20 +22,30 @@
     {% endfor %}
 {% endmacro %}
 
-<ul class="sidenav">
-    {% for page in pages.children.visible %}
-        {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-        <li class="{{ current_page }}">
-            <a href="{{ page.url }}">
-                {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"> </i>{% endif %}
-                {{ page.menu }}
-            </a>
-        </li>
-    {% endfor %}
+<header class="sm-only">
+    <p>hello, world</p>
+</header>
 
-    {% if config.plugins.login.enabled %}
-        <li>
-            {% include 'partials/login-status.html.twig' %}
-        </li>
-    {% endif %}
-</ul>
+<nav class="hide-on-sm">
+    <div class="avatar hide-on-sm">
+        {{ page.find('/images').media['avatar.svg'] }}
+    </div>
+
+    <ul class="sidenav">
+        {% for page in pages.children.visible %}
+            {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
+            <li class="{{ current_page }}">
+                <a href="{{ page.url }}">
+                    {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"> </i>{% endif %}
+                    {{ page.menu }}
+                </a>
+            </li>
+        {% endfor %}
+
+        {% if config.plugins.login.enabled %}
+            <li>
+                {% include 'partials/login-status.html.twig' %}
+            </li>
+        {% endif %}
+    </ul>
+</nav>
