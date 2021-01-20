@@ -16,10 +16,8 @@
 
     {% block stylesheets %}
         {% do assets.addCss('https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"', 100) %}
+        {% do assets.addCss('theme://css/bootstrap.css', 98) %}
         {% do assets.addCss('theme://css/fontawesome-all.css', 99) %}
-        {% do assets.addCss('theme://css/custom.css', 98) %}
-        {% do assets.addCss('theme://css/blog.css', 97) %}
-        {% do assets.addCss('theme://css/forms.css', 96) %}
         {% do assets.addCss('theme://css/gallery.css', 95) %}
     {% endblock %}
     {{ assets.css() }}
@@ -27,6 +25,7 @@
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
         {% do assets.addJs('theme://js/site.js', 99) %}
+        {% do assets.addJS('theme://js/bootstrap.bundle.js', 98) %}
     {% endblock %}
     {{ assets.js() }}
 
@@ -36,15 +35,24 @@
 <body>
 
 {% block body %}
-    <div class="content">
-        {% include 'partials/navigation.html.twig' %}
+    <div class="container">
+        {#
+            This row will show the title bar, which should always be visible.
+            The menu within however, will only be visible at certain sizes.
+         #}
+        <div class="row">
+            {% include 'partials/navigation.html.twig' %}
+        </div>
 
-        <main>
-            <div class="main-content">
-            {% block content %}
-            {% endblock %}
+        <div class="row">
+            <div class="col-4">
+                {# the sidebar will go here #}
             </div>
-        </main>
+            <div class="col-8">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
     </div>
 {% endblock %}
 
