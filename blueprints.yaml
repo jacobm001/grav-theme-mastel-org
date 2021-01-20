@@ -1,6 +1,6 @@
 name: Mastel Org
-version: 0.1.0
-description: My theme from scratch
+version: 1.0.0
+description: The theme for my homepage, built off of bootstrap.
 icon: rebel
 author:
   name: Jacob Mastel
