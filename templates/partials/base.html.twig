@@ -1,7 +1,7 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 
 <!DOCTYPE html>
-<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}" class="h-100">
 <head>
 {% block head %}
     <meta charset="utf-8" />
@@ -32,29 +32,23 @@
 {% endblock head%}
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
 
 {% block body %}
-    <div class="container">
-        {#
-            This row will show the title bar, which should always be visible.
-            The menu within however, will only be visible at certain sizes.
-         #}
-        <div class="row">
-            {% include 'partials/navigation.html.twig' %}
-        </div>
+    {% include 'partials/navigation.html.twig' %}
 
-        <div class="row">
-            <div class="col-4">
-                {# the sidebar will go here #}
-                {# {% include 'partials/sidebar.html.twig' %} #}
-            </div>
-            <div class="col-8">
-                {% block content %}
-                {% endblock %}
-            </div>
+    <main class="flex-shrink-0">
+        <div class="container" style="padding-top: 60px;">
+            {% block content %}
+            {% endblock %}
         </div>
-    </div>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">Copyright Jacob Mastel</span>
+        </div>
+    </footer>
 {% endblock %}
 
 {% block bottom %}
