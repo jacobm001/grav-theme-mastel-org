@@ -1,2 +1,10 @@
 <h3>Recent Blog Posts</h3>
-{% include 'partials/blog_listing.html.twig' %}
+{% set collection = page.collection() %}
+
+{% for child in collection %}
+	<div class="row gy-3">
+		<div class="col p-2">
+			{% include 'partials/blog_listing.html.twig' with { 'blog':page, 'page':child, 'truncate':true } %}
+		</div>
+	</div>
+{% endfor %}
