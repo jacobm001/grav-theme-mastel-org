@@ -3,7 +3,13 @@
 {% set collection = page.collection() %}
 
 {% block content %}
+	<div class="container">
 	{% for child in collection %}
-		{% include 'partials/blog_listing.html.twig' with { 'blog':page, 'page':child, 'truncate':true } %}
+		<div class="row">
+			<div class="col">
+				{% include 'partials/blog_listing.html.twig' with { 'blog':page, 'page':child, 'truncate':true } %}
+			</div>
+		</div>
 	{% endfor %}
+	</div>
 {% endblock %}

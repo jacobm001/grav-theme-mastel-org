@@ -1,12 +1,10 @@
-<div class="blog-listing valign">
-	<div class="listing-date valign-item">
-		<div class="listing-month">{{ page.date|date("M") }}</div>
-		<div class="listing-day">{{ page.date|date("d") }}</div>
-		<div class="listing-year">{{ page.date|date("Y") }}</div>
-	</div>
+<div class="card">
+	<div class="card-body">
+		<h5 class="card-title">{{ page.title }}</h5>
+		<h6 class="card-subtitle">{{ page.date|date("Y-M-d") }}</h6>
 
-	<div class="listing-body">
-		<h2 class="listing-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
-		{{ page.summary }}
+		<p class="card-text">{{ page.summary }}</p>
+
+		<a href="{{ page.url }}">Read All</a>
 	</div>
 </div>
