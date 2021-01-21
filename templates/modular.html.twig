@@ -4,7 +4,5 @@
     {% for module in page.collection() %}
         <div id="{{ _self.pageLinkName(module.menu) }}"></div>
         {{ module.content }}
-
-        {% include 'partials/color_band.html.twig' %}
     {% endfor %}
 {% endblock %}
