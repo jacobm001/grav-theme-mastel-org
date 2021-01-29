@@ -16,16 +16,16 @@
 
     {% block stylesheets %}
         {% do assets.addCss('https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"', 100) %}
-        {% do assets.addCss('theme://css/bootstrap.css', 98) %}
-        {% do assets.addCss('theme://css/fontawesome-all.css', 99) %}
-        {% do assets.addCss('theme://css/gallery.css', 95) %}
+        {% do assets.addCss('theme://css/bootstrap.css', 99) %}
+        {% do assets.addCss('theme://css/fontawesome-all.css', 98) %}
+        {% do assets.addCss('theme://css/custom.css', 97) %}
+        {% do assets.addCss('theme://css/gallery.css', 96) %}
     {% endblock %}
     {{ assets.css() }}
 
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
-        {% do assets.addJs('theme://js/site.js', 99) %}
-        {% do assets.addJS('theme://js/bootstrap.bundle.js', 98) %}
+        {% do assets.addJS('theme://js/bootstrap.bundle.js', 99) %}
     {% endblock %}
     {{ assets.js() }}
 
