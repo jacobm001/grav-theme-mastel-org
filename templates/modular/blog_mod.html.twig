@@ -1,16 +1,17 @@
 {% set collection = page.collection() %}
 
-<div class="card shadow-sm rounded">
-	<div class="card-body">
-	<h3 class="card-title">Recent Blog Posts</h3>
+<div class="row shadow-sm rounded">
+	<div class="col">
+		<h2 class="display-2">Recent Blog Posts</h2>
 
-	<div class="container">
-		<div class="row gy-3">
+
+		<div class="row gy-5">
 		{% for child in collection %}
 			<div class="col-sm-12 p-2 col-md-6 col-lg-4">
 				{% include 'partials/blog_listing.html.twig' with { 'blog':page, 'page':child, 'truncate':true } %}
 			</div>
 		{% endfor %}
 		</div>
+
 	</div>
 </div>
