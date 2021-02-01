@@ -1,31 +1,47 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-<div class="blog-post">
-<h1>{{ page.title }}</h1>
+{{ dump(page) }}
 
-<div class="blog-post-details valign">
-	<div class="valign-item">
-		<span class="left">{{ page.date|date("M d, Y") }}</span>
+<div class="row">
+	<div class="col">
+		<div class="blog-post">
+		<h1>{{ page.title }}</h1>
+
+		<p class="lead">by {{ site.author.name }}</p>
+
+		<hr>
+
+		<p><i class="fa fa-calendar"></i> Posted on {{ page.date|date("F d, Y") }}</p>
+
+		{% if page.taxonomy.tag %}
+		<p><i class="fa fa-tags"></i> Tags:
+			{% for tag in page.taxonomy.tag %}
+			<span class="badge bg-secondary">{{ tag }}</span>
+
+			{% endfor %}
+		</p>
+		{% endif %}
+
+		<p> Share:
+			<span>
+				<a class="fab fa-facebook color-facebook"
+					href="https://www.facebook.com/sharer/sharer.php?u={{ page.url(true) }}"></a>
+			</span>
+			<span>
+				<a class="fab fa-twitter color-twitter"
+					href="https://twitter.com/intent/tweet/?text={{ page.title }}&url={{ page.url(true) }}"></a>
+			</span>
+			<span>
+				<a class="fab fa-reddit color-reddit"
+					href="http://www.reddit.com/submit/?url={{ page.url(true) }}"></a>
+			</span>
+		</p>
+
+		<hr>
+
+		{{ content }}
+		</div>
 	</div>
-
-	<div class="valign-item">
-		<ul class="social-bar right">
-			<li>
-				<a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url(true) }}"><i class="fab fa-facebook-f color-facebook"></i></a>
-			</li>
-			<li>
-				<a href="https://twitter.com/intent/tweet/?text={{ page.title }}&url={{ page.url(true) }}"><i class="fab fa-twitter color-twitter"></i></a>
-			</li>
-			<li>
-				<a href="http://www.reddit.com/submit/?url={{ page.url(true) }}"><i class="fab fa-reddit color-reddit"></i></a>
-			</li>
-		</ul>
-	</div>
-</div>
-
-{% include 'partials/color_band.html.twig' %}
-
-{{ content }}
 </div>
 {% endblock %}

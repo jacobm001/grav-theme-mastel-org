@@ -3,3 +3,18 @@
     max-width: 80%;
     height: auto;
 }
+
+.color-facebook {
+    color: #3b5998;
+    text-decoration: none;
+}
+
+.color-reddit {
+    color: #FF5700;
+    text-decoration: none;
+}
+
+.color-twitter {
+    color: #26a7de;
+    text-decoration: none;
+}
