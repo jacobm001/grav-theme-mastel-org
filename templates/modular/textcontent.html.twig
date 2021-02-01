@@ -1,5 +1,11 @@
-<div class="card shadow-sm rounded">
-    <div class="card-body">
-        {{ content }}
+<div class="row shadow">
+    <div class="col-sm-4 col-md-3 d-none d-sm-block d-flex justify-content-center">
+        {{ page.find('/images').media['avatar.svg'].html('', '', 'avatar-fluid-80 mx-auto d-block align-self-center') }}
+    </div>
+
+    <div class="col-sm-8 col-md-9">
+        <div class="card-body">
+            {{ content }}
+        </div>
     </div>
 </div>
