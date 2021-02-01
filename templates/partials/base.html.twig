@@ -46,7 +46,11 @@
 
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container">
-            <span class="text-muted">Copyright Jacob Mastel</span>
+            <div class="row">
+                <div class="col text-center">
+                    <span class="text-muted">Copyright © {{ now|date("Y") }} Jacob Mastel</span>
+                </div>
+            </div>
         </div>
     </footer>
 {% endblock %}
