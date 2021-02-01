@@ -1,15 +1,15 @@
 {% extends 'partials/base.html.twig' %}
 
-{% set collection = page.collection() %}
-
 {% block content %}
 
-<div class="studio">
-	{% for child in collection %}
-		{% include 'partials/gallery_preview.html.twig' with {'photography':page, 'page':child, 'truncate':true } %}
+<div class="row">
 
-		{% include 'partials/color_band.html.twig' %}
-	{% endfor %}
+	<h1 class="display-1">Photography</h1>
+
+	<div class="gallery-container {{ page.header.class }}">
+		{{ unite_gallery(page.media.images) }}
+	</div>
+
 </div>
 
 {% endblock %}
