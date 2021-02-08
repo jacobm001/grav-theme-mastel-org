@@ -1,0 +1,43 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-12">
+	{% if grav.user.authenticated %}
+		{% include 'partials/recipebook/edit_button.html.twig' %}
+	{% endif %}
+    </div>
+</div>
+
+	{{ dump(recipe) }}
+
+<div class="row">
+    <div class="col-sm-12">
+	    <h1 class="display-1">{{ recipe.name }}</h1>
+    </div>
+
+	<div class="col-sm-12">
+        <h2>Notes</h2>
+        {{ recipe.notes|markdown }}
+    </div>
+
+    <div class="col-sm-12 col-md-4">
+        <h2>Ingredients</h2>
+        {{ recipe.ingredients|markdown }}
+    </div>
+
+
+    <div class="col-sm-12 col-md-8">
+        <h2>Directions</h2>
+        {{ recipe.directions|markdown }}
+    </div>
+
+    <div class="col-sm-12">
+        <ul class="list-group list-group-horizontal">
+            {% for tag in recipe.tags %}
+                <li class="list-group-item">{{ tag }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
