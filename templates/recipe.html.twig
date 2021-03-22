@@ -2,22 +2,20 @@
 
 {% block content %}
 
+{% if grav.user.authenticated %}
 <div class="row">
     <div class="col-sm-12">
-	{% if grav.user.authenticated %}
-		{% include 'partials/recipebook/edit_button.html.twig' %}
-	{% endif %}
+        {% include 'partials/recipebook/edit_button.html.twig' %}
     </div>
 </div>
-
-	{{ dump(recipe) }}
+{% endif %}
 
 <div class="row">
     <div class="col-sm-12">
-	    <h1 class="display-1">{{ recipe.name }}</h1>
+            <h1 class="display-1">{{ recipe.name }}</h1>
     </div>
 
-	<div class="col-sm-12">
+    <div class="col-sm-12">
         <h2>Notes</h2>
         {{ recipe.notes|markdown }}
     </div>
@@ -40,4 +38,5 @@
             {% endfor %}
         </ul>
     </div>
+</div>
 {% endblock %}
