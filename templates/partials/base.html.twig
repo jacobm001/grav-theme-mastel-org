@@ -26,6 +26,7 @@
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
         {% do assets.addJS('theme://js/bootstrap.bundle.js', 99) %}
+        {% do assets.addJS('user://plugins/flex-objects/js/list.min.js') %}
     {% endblock %}
     {{ assets.js() }}
 
@@ -34,8 +35,6 @@
 
 {% block body %}
 <body class="d-flex flex-column h-100"></body>
-<script src="http://localhost:8080/user/plugins/flex-objects/js/list.min.js"></script>
-
     {% include 'partials/navigation.html.twig' %}
 
     <main class="flex-shrink-0">
