@@ -1,13 +1,13 @@
 name: Mastel Org
 version: 1.0.0
 description: The theme for my homepage, built off of bootstrap.
-icon: rebel
+icon: coffee
 author:
   name: Jacob Mastel
   email: jacob@mastel.org
 homepage: https://github.com/jacob-mastel/grav-theme-mastel-org
-demo: http://demo.yoursite.com
-keywords: grav, theme, etc
+demo: https://mastel.org
+keywords: grav, theme
 bugs: https://github.com/jacob-mastel/grav-theme-mastel-org/issues
 readme: https://github.com/jacob-mastel/grav-theme-mastel-org/blob/develop/README.md
 license: MIT
