@@ -1,15 +1,11 @@
 {% set collection = page.collection() %}
 
-<div class="row">
-	<div class="col">
-		<h2 class="display-2">Recent Blog Posts</h2>
-
-		<div class="row gy-5">
-		{% for child in collection %}
-			<div class="col-sm-12 p-2 col-md-6 col-lg-4">
-				{% include 'partials/blog_listing.html.twig' with { 'blog':page, 'page':child, 'truncate':true } %}
-			</div>
-		{% endfor %}
-		</div>
-	</div>
+<div class="col-sm-12">
+	<h2 class="display-2">Recent Blog Posts</h2>
 </div>
+
+{% for child in collection %}
+	<div class="col-sm-12 col-lg-6">
+		{% include 'partials/blog_listing.html.twig' with { 'blog':page, 'page':child, 'truncate':true } %}
+	</div>
+{% endfor %}
