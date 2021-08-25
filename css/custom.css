@@ -18,3 +18,7 @@
     color: #26a7de;
     text-decoration: none;
 }
+
+.blog-card-body {
+    height: 7.5rem;
+}
