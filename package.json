@@ -1,0 +1,23 @@
+{
+  "name": "mastel-org",
+  "version": "1.0.0",
+  "description": "The **Mastel Org** Theme is for [Grav CMS](http://github.com/getgrav/grav).  This README.md file should be modified to describe the features, installation, configuration, and general usage of this theme.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobm001/grav-theme-mastel-org.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobm001/grav-theme-mastel-org/issues"
+  },
+  "homepage": "https://github.com/jacobm001/grav-theme-mastel-org#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.0"
+  }
+}

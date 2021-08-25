@@ -22,22 +22,3 @@
 .blog-card-body {
     height: 8rem;
 }
-
-a {
-    color: #b2b6cc;
-}
-
-a:hover {
-    color: #f7a590;
-}
-
-body {
-    background-color: #393a4e;
-    color: oldlace;
-}
-
-.bg-green {
-    --bs-bg-opacity: 1;
-    background-color: #6a2025;
-    opacity: 1;
-}

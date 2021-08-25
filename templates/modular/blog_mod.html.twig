@@ -7,7 +7,7 @@
 <div class="col-sm-12">
 	<ul class="list-group list-group-flush">
 	{% for child in collection %}
-		<li class="list-group-item"><i class="bi bi-chevron-double-right"></i> {{ child.date|date("Y-m-d") }} - <a href="{{ child.url }}">{{ child.title }}</a></li>
+		<li class="list-group-item bg-light"><i class="bi bi-chevron-double-right"></i> {{ child.date|date("Y-m-d") }} - <a href="{{ child.url }}">{{ child.title }}</a></li>
 	{% endfor %}
 	</ul>
 </div>
