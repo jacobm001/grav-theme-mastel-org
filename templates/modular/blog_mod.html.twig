@@ -4,8 +4,10 @@
 	<h2 class="display-2">Recent Blog Posts</h2>
 </div>
 
-{% for child in collection %}
-	<div class="col-sm-12 col-lg-6">
-		{% include 'partials/blog_post_card.html.twig' with { 'blog':page, 'page':child, 'truncate':true } %}
-	</div>
-{% endfor %}
+<div class="col-sm-12">
+	<ul class="list-group list-group-flush">
+	{% for child in collection %}
+		<li class="list-group-item"><i class="bi bi-chevron-double-right"></i> {{ child.date|date("Y-m-d") }} - <a href="{{ child.url }}">{{ child.title }}</a></li>
+	{% endfor %}
+	</ul>
+</div>
