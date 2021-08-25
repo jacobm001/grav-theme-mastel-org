@@ -6,6 +6,6 @@
 
 {% for child in collection %}
 	<div class="col-sm-12 col-lg-6">
-		{% include 'partials/blog_listing.html.twig' with { 'blog':page, 'page':child, 'truncate':true } %}
+		{% include 'partials/blog_post_card.html.twig' with { 'blog':page, 'page':child, 'truncate':true } %}
 	</div>
 {% endfor %}
