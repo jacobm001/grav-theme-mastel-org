@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row">
 	<div class="col">
-		<h1>{{ page.title }}</h1>
+		<h1 class="display-1">{{ page.title }}</h1>
 
 		<p class="lead">by {{ site.author.name }}</p>
 	</div>
@@ -11,7 +11,7 @@
 </div>
 
 <div class="row">
-	<div class="col-xs-12 col-sm">
+	<div class="col-xs-12">
 		<p><i class="fa fa-calendar"></i> Posted on {{ page.date|date("F d, Y") }}</p>
 
 		{% if page.taxonomy.tag %}
@@ -36,7 +36,7 @@
 			</span>
 			<span>
 				<a class="fab fa-reddit color-reddit"
-					href="http://www.reddit.com/submit/?url={{ page.url(true) }}"></a>
+					href="https://www.reddit.com/submit/?url={{ page.url(true) }}"></a>
 			</span>
 		</p>
 	</div>
