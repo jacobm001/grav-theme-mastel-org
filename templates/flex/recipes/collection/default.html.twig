@@ -1,0 +1,40 @@
+{%- set object_context = object ?? {} -%}
+{%- set object_layout = object_context.layout ?? ('list-' ~ layout) -%}
+
+<style>
+.top-buffer { margin-top:10px; }
+</style>
+
+<div id="flex-objects">
+	<div class="row top-buffer">
+		<div class="hidden-sm-down col-md-4"></div>
+
+		<div class="col-sm-12 col-md-4">
+			<div class="input-group">
+				<label class="visually-hidden" for="flex-object-search">Search by Title or Tags</label>
+				<div class="input-group">
+					<input type="text" class="form-control search" id="flex-object-search" placeholder="Search by Title or Tags">
+					<div class="input-group-text"><i class="fa fa-search"></i></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row top-buffer">
+		<div class="col">
+			<div class="list-group list-group-flush list">
+			{% for object in collection.sort({'title': 'ASC'}).filterBy({ published: true }) %}
+			{% render object layout: object_layout with object_context %}
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	let	options = {
+		valueNames: ['title', 'description', 'tags']
+	};
+
+	let flexList = new List('flex-objects', options);
+</script>
