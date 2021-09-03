@@ -1,10 +1,13 @@
 <li class="list-group-item bg-light">
-	<a href="{{ object.type }}/id:{{ object.key|e }}"><span class="title">{{ object.title|e }}</span></a>
+	<a href="{{ object.type }}/id:{{ object.key|e }}">
+		<span class="title">{{ object.title|e }}</span>
+	</a>
 	{% if object.tags %}
-	<span class="tags">
-		<i class="fa fa-tags"></i>
-		{%- for tag in object.tags %}{{ tag }}{% if not loop.last %},{% endif %}
-		{% endfor -%}
-	</span>
+		<br/>
+		<span class="tags">
+			<i class="fa fa-tags"></i>
+			{%- for tag in object.tags %}{{ tag }}{% if not loop.last %},{% endif %}
+			{% endfor -%}
+		</span>
 	{% endif %}
 </li>
