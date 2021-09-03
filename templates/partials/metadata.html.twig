@@ -1,3 +1,17 @@
 {% for meta in page.metadata %}
 <meta {% if meta.name %}name="{{ meta.name }}" {% endif %}{% if meta.http_equiv %}http-equiv="{{ meta.http_equiv }}" {% endif %}{% if meta.charset %}charset="{{ meta.charset }}" {% endif %}{% if meta.property %}property="{{ meta.property }}" {% endif %}{% if meta.content %}content="{{ meta.content }}" {% endif %}/>
 {% endfor %}
+
+{# open graph entries #}
+{% if page.media.images %}
+    {% set img = page.media.images|first %}
+{% else %}
+    {% set img = url('theme://images/open-graph.png') %}
+{% endif %}
+
+{{ dump(config.site) }}
+<meta property="og:site_name" content="{{ config.site.title }}" />
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:url" content="{{ page.url }}" />
+<meta property="og:image" content="{{ img }}" />
+<meta property="og:locale" content="{{ config.site.default_lang }}" />
