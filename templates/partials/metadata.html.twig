@@ -12,5 +12,7 @@
 <meta property="og:site_name" content="{{ config.site.title }}" />
 <meta property="og:title" content="{{ page.title }}" />
 <meta property="og:url" content="{{ page.url }}" />
+{% if img %}
 <meta property="og:image" content="{{ img }}" />
+{% endif %}
 <meta property="og:locale" content="{{ config.site.default_lang }}" />
