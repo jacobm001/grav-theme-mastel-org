@@ -3,13 +3,12 @@
 {% endfor %}
 
 {# open graph entries #}
-{% if page.media.images %}
-    {% set img = page.media.images|first %}
+{% if page.media['open-graph.jpg'] %}
+    {% set img = page.media['open-graph.jpg'] %}
 {% else %}
-    {% set img = url('theme://images/open-graph.png') %}
+    {% set img = url('user://images/open-graph.png') %}
 {% endif %}
 
-{{ dump(config.site) }}
 <meta property="og:site_name" content="{{ config.site.title }}" />
 <meta property="og:title" content="{{ page.title }}" />
 <meta property="og:url" content="{{ page.url }}" />
