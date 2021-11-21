@@ -25,6 +25,7 @@
     {{ assets.css() }}
 
     {% block javascripts %}
+        {% do assets.addJS('theme://js/jquery-3.6.0.min.js', 101) %}
         {% do assets.addJS('theme://js/bootstrap.bundle.js', 100) %}
         {% do assets.addJS('user://plugins/flex-objects/js/list.min.js', 99) %}
     {% endblock %}
