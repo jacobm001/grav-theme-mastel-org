@@ -3,13 +3,15 @@
 {% block content %}
 
 <div class="row">
-
-	<h1 class="display-1">Photography</h1>
-
-	<div class="gallery-container {{ page.header.class }}">
-		{{ unite_gallery(page.media.images) }}
+	<div class="col-xs-12">
+		<h1 class="display-1">Photography</h1>
 	</div>
 
+	<div class="col-xs-12">
+		<div class="gallery-container {{ page.header.class }}">
+			{{ unite_gallery(page.media.images) }}
+		</div>
+	</div>
 </div>
 
 {% endblock %}
